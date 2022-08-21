@@ -7,7 +7,7 @@ var permissions = Permissions.PERFORM_GAME_ACTIONS;
 
 var theoryManager;
 var timer = 0;
-var requirements = [50, 250, 175, 175, 25, 100, 100, 20];
+var requirements = [50, 250, 125, 175, 25, 100, 100, 20];
 var R8;
 var R9;
 var test;
