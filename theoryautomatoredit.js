@@ -7,7 +7,7 @@ var permissions = Permissions.PERFORM_GAME_ACTIONS;
 
 var theoryManager;
 var timer = 0;
-var requirements = [50, 250, 125, 175, 25, 100, 100, 20];
+var requirements = [50, 250, 125, 175, 25, 125, 100, 20];
 var R8;
 var R9;
 var test;
@@ -71,13 +71,14 @@ var getQuaternaryEntries = () => {
 		2.15,
 		4.93
 	];
-		
+	let msmax = [150, 250, 175, 175, 150, 150, 175, 220];
+	
 	let tau;
 	let tauH;	
 		
 	for (let i = 0; i < Math.min(8, game.researchUpgrades[7].level); i++) {
 		tau = game.theories[i].tauPublished.log10();
-		tauH = base[i] * R9 ** (1 / timeMult[i]) / 2 ** ((tau - requirements[i]) / decay[i]);
+		tauH = base[i] * R9 ** (1 / timeMult[i]) / 2 ** ((tau - msmax[i]) / decay[i]);
 		quaternaryEntries[i].value = formatQValue(tauH);
 	}
 	for (let i = game.researchUpgrades[7].level; i < 8; i++) {
@@ -92,7 +93,7 @@ var getQuaternaryEntries = () => {
 	timeMult = 1;
 	
 	tau = game.theories[3].tauPublished.log10();
-	tauH = base * R9 ** (1 / timeMult) / 2 ** ((tau - requirements[3]) / decay);
+	tauH = base * R9 ** (1 / timeMult) / 2 ** ((tau - msmax[3]) / decay);
 	quaternaryEntries[3].value = formatQValue(Math.max(tauH, quaternaryEntries[3].value));
 	
 	// T6 low tau check
@@ -103,7 +104,7 @@ var getQuaternaryEntries = () => {
 	timeMult = 2;
 	
 	tau = game.theories[5].tauPublished.log10();
-	tauH = base * R9 ** (1 / timeMult) / 2 ** ((tau - requirements[5]) / decay);
+	tauH = base * R9 ** (1 / timeMult) / 2 ** ((tau - msmax[5]) / decay);
 	quaternaryEntries[5].value = formatQValue(Math.max(tauH, quaternaryEntries[5].value));
 
     return quaternaryEntries;
