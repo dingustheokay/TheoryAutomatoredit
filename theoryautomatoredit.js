@@ -1156,6 +1156,7 @@ class T4 {
 		if (buyMax(this.q2, upgradeCost(this.c3) / this.q2weight)) schedulerRefresh = true;
 		if (buyRatio(this.q2, 100)) schedulerRefresh = true;
 		if (buyMax(this.q1, upgradeCost(this.c3).min(upgradeCost(this.q2)) / 10)) schedulerRefresh = true;
+		if (buyRatio(this.q1, 1000)) schedulerRefresh = true;
 
 		if (!schedulerRefresh && "" + k != "" + this.ratio) 
 			this.showSchedule();
