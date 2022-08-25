@@ -1154,6 +1154,7 @@ class T4 {
 		if (buyMax(this.c1, upgradeCost(this.c2) / 10)) schedulerRefresh = true;
 		if (buyMax(this.c3, this.theory.currencies[0].value * k)) schedulerRefresh = true;
 		if (buyMax(this.q2, upgradeCost(this.c3) / this.q2weight)) schedulerRefresh = true;
+		if (buyMax(this.q2, this.theory.currencies[0].value / 100) schedulerRefresh = true;
 		if (buyMax(this.q1, upgradeCost(this.c3).min(upgradeCost(this.q2)) / 10)) schedulerRefresh = true;
 
 		if (!schedulerRefresh && "" + k != "" + this.ratio) 
