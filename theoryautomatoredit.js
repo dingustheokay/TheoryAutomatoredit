@@ -949,7 +949,7 @@ class T4 {
 	}
 
 	get getC1() {
-		return Utils.getStepwisePowerSum(this.c1.level, 2, 10, 0).pow(this.theory.milestoneUpgrades[0].level * 0.05 + 1);	
+		return Utils.getStepwisePowerSum(this.c1.level, 2, 10, 0).pow(this.theory.milestoneUpgrades[1].level * 0.15 + 1);	
 	}
 
 	get q() {
