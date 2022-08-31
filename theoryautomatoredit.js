@@ -1577,6 +1577,7 @@ class T6 {
 			let q2cost = this.q2.cost.getCost(this.q2.level + this.scheduledLevels[1]);
 			let r2cost = this.r2.cost.getCost(this.r2.level + this.scheduledLevels[3]);
 			let c2weight = (c2Cost * 2 ** 0.5 > r2cost.min(q2cost)) ? 2 ** 0.5 : 1;
+			let c5costWithWeight = this.c5.cost.getCost(this.c5.level + this.scheduledLevels[6]) / k.max(Number.MIN_VALUE).min(1);
 
 			let costs = [
 				this.q1.cost.getCost(this.q1.level + this.scheduledLevels[0]) * (7 + (this.q1.level % 10) / 2),
@@ -1585,7 +1586,7 @@ class T6 {
 				r2cost,
 				c1WithWeight < c2Cost ? c1WithWeight : veryBigNumber,
 				c2Cost * k.max(1) * c2weight,
-				this.c5.cost.getCost(this.c5.level + this.scheduledLevels[6]) / k.max(Number.MIN_VALUE).min(1)
+				this.theory.milestoneUpgrades[2].level == 1 ? c5costWithWeight : veryBigNumber
 			];
 
 			let minCost = [veryBigNumber, null];
@@ -1690,6 +1691,7 @@ class T6 {
 			let c1WithWeight = upgradeCost(this.c1) * (8 + this.c1.level % 10);
 			let c2Cost = upgradeCost(this.c2);
 			let c2weight = (c2Cost * 2 ** 0.5 > upgradeCost(this.r2).min(upgradeCost(this.q2))) ? 2 ** 0.5 : 1;
+			let c5WithWeight = upgradeCost(this.c5) / k.max(Number.MIN_VALUE).min(1);
 						
 			let costs = [
 				upgradeCost(this.q1) * (7 + (this.q1.level % 10) / 2),
@@ -1700,7 +1702,7 @@ class T6 {
 				c2Cost * k.max(1) * c2weight,
 				veryBigNumber, // does not buy c3
 				veryBigNumber, // does not buy c4
-				upgradeCost(this.c5) / k.max(Number.MIN_VALUE).min(1)
+				this.theory.milestoneUpgrades[2].level == 1 ? c5WithWeight : veryBigNumber
 			];
 			let minCost = [veryBigNumber, null];
 			for (let i = 0; i < 9; i++)
