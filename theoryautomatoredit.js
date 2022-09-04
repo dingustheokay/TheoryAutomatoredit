@@ -240,6 +240,7 @@ class T1 {
 		
 		let upgrade;
 		let ratio;
+		let c3coef = this.theory.currencies[0].value < 1e300 ? 1.1 : 5;
 		switch (upgradeIndex) {
 			case 0:
 				upgrade = this.q1;
@@ -251,11 +252,11 @@ class T1 {
 				break;
 			case 2:
 				upgrade = this.c3;
-				ratio 	= 5;
+				ratio 	= c3coef;
 				break;
 			case 3:
 				upgrade = this.c4;
-				ratio 	= 1;
+				ratio 	= 1.01;
 				break;
 		}
 		
