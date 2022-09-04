@@ -281,11 +281,12 @@ class T1 {
 				q1cost * (15.2 + (this.q1.level + this.scheduledLevels[0]) % 10) >= c4cost
 			) 
 				q1weightedCost = veryBigNumber;
+			let c3coef = this.theory.currencies[0].value < 1e300 ? 1.1 : 5;
 
 			let costs = [
 				q1weightedCost,
 				q2cost * 1.11,
-				this.c3.cost.getCost(this.c3.level + this.scheduledLevels[2]) * 5,
+				this.c3.cost.getCost(this.c3.level + this.scheduledLevels[2]) * c3coef,
 				c4cost
 			];
 
