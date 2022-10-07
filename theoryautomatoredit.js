@@ -240,7 +240,7 @@ class T1 {
 		
 		let upgrade;
 		let ratio;
-		let c3coef = this.theory.currencies[0].value < 1e300 ? 1.15 : 5;
+		let c3coef = this.theory.currencies[0].value < 1e300 ? 1.1 : 5;
 		switch (upgradeIndex) {
 			case 0:
 				upgrade = this.q1;
@@ -282,7 +282,7 @@ class T1 {
 				q1cost * (15.2 + (this.q1.level + this.scheduledLevels[0]) % 10) >= c4cost
 			) 
 				q1weightedCost = veryBigNumber;
-			let c3coef = this.theory.currencies[0].value < 1e300 ? 1.15 : 5;
+			let c3coef = this.theory.currencies[0].value < 1e300 ? 1.1 : 5;
 
 			let costs = [
 				q1weightedCost,
