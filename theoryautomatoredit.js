@@ -1404,7 +1404,7 @@ class T5 {
 				upgradeCost(this.q2),
 				c2worth ? veryBigNumber : upgradeCost(this.c1) * 2,
 				c2worth ? upgradeCost(this.c2) : veryBigNumber,
-				upgradeCost(this.c3)
+				this.theory.milestoneUpgrades[1].level == 1 ? upgradeCost(this.c3) : veryBigNumber
 			];
 			if (costs[0] > this.pub * 0.28)
 				costs[0] = veryBigNumber;
