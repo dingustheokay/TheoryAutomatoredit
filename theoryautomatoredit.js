@@ -1279,7 +1279,7 @@ class T5 {
 				this.q1.cost.getCost(this.q1.level + this.scheduledLevels[0]) * (5.5 + ((this.q1.level + this.scheduledLevels[0]) % 10) * 0.35),
 				this.q2.cost.getCost(this.q2.level + this.scheduledLevels[1]),
 				this.c2.cost.getCost(this.c2.level + this.scheduledLevels[2]),
-				this.theory.milestoneUpgrades[1].level == 1 ? this.c3.cost.getCost(this.c3.level + this.scheduledLevels[3] : veryBigNumber)
+				this.theory.milestoneUpgrades[1].level == 1 ? this.c3.cost.getCost(this.c3.level + this.scheduledLevels[3]) : veryBigNumber
 			];
 			if (costs[0] > this.pub * 0.28)
 				costs[0] = veryBigNumber;
