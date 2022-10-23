@@ -340,6 +340,8 @@ class T1 {
 		let schedulerRefresh = false;
 		if (buyRatio(this.q1, 50)) schedulerRefresh = true;
 		if (buyRatio(this.q2,  2)) schedulerRefresh = true;
+		if (buyRatio(this.c1, 10000)) schedulerRefresh=true;
+		if (buyRatio(this.c2, 1000)) schedulerRefresh=true;
 		if (buyRatio(this.c3, 10)) schedulerRefresh = true;
 		if (buyRatio(this.c4,  2)) schedulerRefresh = true;
 
