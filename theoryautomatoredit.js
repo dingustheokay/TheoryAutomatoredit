@@ -205,6 +205,8 @@ class T1 {
 		this.upgrades = this.theory.upgrades;
 		this.q1 = this.upgrades[0];
 		this.q2 = this.upgrades[1];
+		this.c1 = this.upgrades[2];
+		this.c2 = this.upgrades[3];
 		this.c3 = this.upgrades[4];
 		this.c4 = this.upgrades[5];
 
