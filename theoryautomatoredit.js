@@ -1365,7 +1365,7 @@ class T5 {
 			counter++;
 		}
 
-		let target = 1050;
+		let target = 105;
 
 		let step = (c3Next / (ratio * c3Prev * target)).pow(1 / (counter * 3 - 1));
 		this.pub = c3Prev * target;
