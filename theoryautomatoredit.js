@@ -961,6 +961,13 @@ class T4 {
 	get q() {
 		return parseBigNumber(this.theory.tertiaryEquation.substring(2));
 	}
+	
+	get getMaxC3() {
+		let rho = this.maxRho;
+		if (rho < 2000)
+			return 0;
+		return toBig(2).pow((rho / 2000).log2() / Math.log2(2.468));
+	}
 
 	upgradeByIndex(upgradeIndex) {
 		
@@ -995,7 +1002,7 @@ class T4 {
 		
 		while (this.scheduledUpgrades.length < 6) {
 
-			let k = this.q * toBig(2).pow(this.c3.level) / (toBig(2).pow(this.c2.level) * this.getC1);
+			let k = this.q * getMaxC3() / (toBig(2).pow(this.c2.level) * this.getC1);
 			let p = k > 0 ? 1 / k : 1;
 			let c1WithWeight = this.c1.cost.getCost(this.c1.level + this.scheduledLevels[0]) * (10 + (this.c1.level % 10) / 2);
 			let q1WithWeight = this.q1.cost.getCost(this.q1.level + this.scheduledLevels[3]) * (10 + this.q1.level % 10);
@@ -1151,7 +1158,7 @@ class T4 {
 		if (this.theory.currencies[0].value == 0)
 			this.c1.buy(1);
 
-		let k = this.q * toBig(2).pow(this.c3.level) / (toBig(2).pow(this.c2.level) * this.getC1);
+		let k = this.q * getMaxC3() / (toBig(2).pow(this.c2.level) * this.getC1);
 		let p = k > 0 ? 1 / k : 1;
 
 		let schedulerRefresh = false;
