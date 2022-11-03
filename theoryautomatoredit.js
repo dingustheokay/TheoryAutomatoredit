@@ -962,6 +962,19 @@ class T4 {
 		return parseBigNumber(this.theory.tertiaryEquation.substring(2));
 	}
 	
+	get maxRho() {
+		let max = toBig(0);
+		for (let i = 0; i < this.upgrades.length; i++) {
+			let upgrade = this.upgrades[i];
+			if (upgrade.level) {
+				let cost = upgrade.cost.getCost(upgrade.level - 1);
+				max = max.max(cost);
+			}
+		}
+		max = max.max(this.theory.currencies[0].value);
+		return max;
+	}
+	
 	get getMaxC3() {
 		let rho = this.maxRho;
 		if (rho < 2000)
