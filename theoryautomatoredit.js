@@ -233,7 +233,7 @@ class T1 {
 		let mult = diff < 3 ? 100 : diff < 5 ? 0.015 : 0.00014;
 		this.pub = this.c4NC * mult;
 		
-		mult = diff < toBig(3) ? toBig(30) : diff < toBig(5) ? toBig(0.003) : toBig(0.00003);
+		mult = diff < toBig(3) ? toBig(40) : diff < toBig(5) ? toBig(0.004) : toBig(0.00004);
 		this.coast = this.c4NC * mult;
 		
 	}	
