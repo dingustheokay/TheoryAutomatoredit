@@ -7,7 +7,7 @@ var permissions = Permissions.PERFORM_GAME_ACTIONS;
 
 var theoryManager;
 var timer = 0;
-var requirements = [50, 100, 125, 25, 10, 100, 100, 20];
+var requirements = [50, 100, 125, 25, 10, 75, 100, 20];
 var R8;
 var R9;
 var test;
@@ -55,7 +55,7 @@ var getQuaternaryEntries = () => {
 		37.4972532637665,
 		30.7608639120181,
 		44.9544911685781,
-		39.2687021300084,
+		42.2687021300084,
 		102.119195226465,
 		26.7695950304505,
 		17.6476778516314
