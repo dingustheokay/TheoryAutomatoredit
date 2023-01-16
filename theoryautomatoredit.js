@@ -979,7 +979,7 @@ class T4 {
 		let rho = this.maxRho;
 		if (rho < 2000)
 			return 0;
-		return toBig(2).pow(((rho / 2000).log2() / Math.log2(2.468)).floor());
+		return toBig(2).pow(((rho / 2000).log2() / Math.log2(2.468)));
 	}
 
 	upgradeByIndex(upgradeIndex) {
