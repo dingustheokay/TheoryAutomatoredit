@@ -1410,7 +1410,7 @@ class T5 {
 		if (this.theory.tau >= this.coast && enablePublications.level) return;
 
 		let schedulerRefresh = false;
-		if (buyRatio(this.q1,   100)) schedulerRefresh = true;
+		if (buyRatio(this.q1,   10)) schedulerRefresh = true;
 		if (buyRatio(this.q2,     4)) schedulerRefresh = true;
 		if (buyRatio(this.c1, 10000)) schedulerRefresh = true;
 		if (buyRatio(this.c3,     2)) schedulerRefresh = true;
